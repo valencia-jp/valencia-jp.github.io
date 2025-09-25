@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>送信フォーム</title>
+  <style>
+    body { font-family: 'Roboto', sans-serif; background-color: #f4f6f8; margin: 0; padding: 0; }
+    .container { width: 100%; max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; box-shadow: 0 0 15px rgba(0,0,0,0.05); border-radius: 8px; }
+    h2 { margin-top: 0; font-size: 1.5rem; margin-bottom: 1rem; }
+    .form-section { margin-bottom: 2rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-row { display: flex; gap: 1rem; }
+    .form-row--split { gap: 1.5rem; }
+    #dept-fields { gap: 1.5rem; }
+    label { font-size: 0.9rem; margin-bottom: 0.25rem; display: block; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="number"], select {
+      width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;
+    }
+    .radio-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .radio-inline { display: flex; gap: 1rem; align-items: center; }
+    button[type="button"] { background: none; border: none; cursor: pointer; }
+    .submit-btn { background-color: #4d8c97; color: #fff; padding: 0.75rem 2rem; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+    .agree { font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- action は JS で preventDefault するのでそのままでも可 -->
+  <form action="register_1.html" method="get" id="submissionForm">
+    <!-- 1. profile section -->
+    <div class="form-section">
+      <h2>プロフィールを入力してください</h2>
+      <div class="form-row form-row--split">
+        <div class="form-group">
+          <label for="last-name">氏名</label>
+          <input id="last-name" type="text" placeholder="山田" required>
+        </div>
+        <div class="form-group" style="margin-top:1.65rem;">
+          <input id="first-name" type="text" placeholder="太郎" required>
+        </div>
+      </div>
+      <div class="form-row form-row--split">
+        <div class="form-group">
+          <label for="last-kana">ふりがな</label>
+          <input id="last-kana" type="text" placeholder="やまだ" required>
+        </div>
+        <div class="form-group" style="margin-top:1.65rem;">
+          <input id="first-kana" type="text" placeholder="たろう" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="region">お住まいの地域</label>
+        <select id="region" required>
+          <option value="" disabled selected>都道府県を選択してください</option>
+          <option value="北海道">北海道</option>
+          <option value="青森県">青森県</option>
+          <option value="岩手県">岩手県</option>
+          <option value="宮城県">宮城県</option>
+          <option value="秋田県">秋田県</option>
+          <option value="山形県">山形県</option>
+          <option value="福島県">福島県</option>
+          <option value="茨城県">茨城県</option>
+          <option value="栃木県">栃木県</option>
+          <option value="群馬県">群馬県</option>
+          <option value="埼玉県">埼玉県</option>
+          <option value="千葉県">千葉県</option>
+          <option value="東京都">東京都</option>
+          <option value="神奈川県">神奈川県</option>
+          <option value="新潟県">新潟県</option>
+          <option value="富山県">富山県</option>
+          <option value="石川県">石川県</option>
+          <option value="福井県">福井県</option>
+          <option value="山梨県">山梨県</option>
+          <option value="長野県">長野県</option>
+          <option value="岐阜県">岐阜県</option>
+          <option value="静岡県">静岡県</option>
+          <option value="愛知県">愛知県</option>
+          <option value="三重県">三重県</option>
+          <option value="滋賀県">滋賀県</option>
+          <option value="京都府">京都府</option>
+          <option value="大阪府">大阪府</option>
+          <option value="兵庫県">兵庫県</option>
+          <option value="奈良県">奈良県</option>
+          <option value="和歌山県">和歌山県</option>
+          <option value="鳥取県">鳥取県</option>
+          <option value="島根県">島根県</option>
+          <option value="岡山県">岡山県</option>
+          <option value="広島県">広島県</option>
+          <option value="山口県">山口県</option>
+          <option value="徳島県">徳島県</option>
+          <option value="香川県">香川県</option>
+          <option value="愛媛県">愛媛県</option>
+          <option value="高知県">高知県</option>
+          <option value="福岡県">福岡県</option>
+          <option value="佐賀県">佐賀県</option>
+          <option value="長崎県">長崎県</option>
+          <option value="熊本県">熊本県</option>
+          <option value="大分県">大分県</option>
+          <option value="宮崎県">宮崎県</option>
+          <option value="鹿児島県">鹿児島県</option>
+          <option value="沖縄県">沖縄県</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>性別</label>
+        <div class="radio-inline">
+          <label><input type="radio" name="gender" value="male" checked> 男性</label>
+          <label><input type="radio" name="gender" value="female"> 女性</label>
+          <label><input type="radio" name="gender" value="other"> その他</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. school section -->
+    <div class="form-section">
+      <h2>在学中もしくは卒業した学校を選択してください</h2>
+      <div class="form-group radio-group" id="school-options">
+        <label><input type="radio" name="school" value="university"> 大学</label>
+        <label><input type="radio" name="school" value="graduate"> 大学院 (修士)</label>
+        <label><input type="radio" name="school" value="graduate-doctor"> 大学院 (博士)</label>
+        <label><input type="radio" name="school" value="junior"> 短大</label>
+        <label><input type="radio" name="school" value="vocational"> 専門学校</label>
+      </div>
+      <div class="form-row" id="dept-fields" style="display:none;">
+        <div class="form-group" id="faculty-group">
+          <label for="faculty">学部 / 研究科</label>
+          <input id="faculty" type="text">
+        </div>
+        <div class="form-group" id="department-group">
+          <label for="department">学科 / 専攻</label>
+          <input id="department" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="grad-year">卒業予定年</label>
+        <select id="grad-year">
+          <option value="" selected disabled>選択してください</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 3. info section -->
+    <div class="form-section">
+      <div class="form-group">
+        <label for="email">メールアドレス *</label>
+        <input id="email" type="email" required placeholder="exsample@mail.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">電話番号 *</label>
+        <input id="phone" type="tel" required placeholder="09012345678">
+      </div>
+      <div class="form-group">
+        <label for="password">パスワード *</label>
+        <div class="form-row">
+          <input id="password" type="password" minlength="4" required style="flex:1;">
+          <button type="button" id="togglePassword">&#128065;</button>
+        </div>
+        <small>4文字以上で入力してください</small>
+      </div>
+      <div class="form-group agree">
+        <label><input type="checkbox" required> <a href="terms.html" target="_blank">利用規約</a> および <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意する。また、ご案内のメールを受け取る。</label>
+      </div>
+    </div>
+
+    <!-- 4. submit button -->
+    <div class="form-section" style="text-align:center;">
+      <button class="submit-btn" type="submit" id="submitBtn">次へ進む</button>
+    </div>
+  </form>
+</div>
+
+<script>
+/* ===== UI 補助 ===== */
+const schoolRadios = document.querySelectorAll('input[name="school"]');
+const deptFields = document.getElementById('dept-fields');
+function updateSchoolFields() {
+  const selected = document.querySelector('input[name="school"]:checked');
+  if (!selected) return;
+  const value = selected.value;
+  const facultyGroup = document.getElementById('faculty-group');
+  const departmentGroup = document.getElementById('department-group');
+  if (value === 'university' || value === 'junior') {
+    deptFields.style.display = 'flex';
+    facultyGroup.querySelector('label').textContent = '学部';
+    departmentGroup.querySelector('label').textContent = '学科';
+    departmentGroup.style.display = 'block';
+  } else if (value === 'vocational') {
+    deptFields.style.display = 'flex';
+    facultyGroup.querySelector('label').textContent = '専攻';
+    departmentGroup.style.display = 'none';
+  } else if (value.startsWith('graduate')) {
+    deptFields.style.display = 'flex';
+    facultyGroup.querySelector('label').textContent = '研究科';
+    departmentGroup.querySelector('label').textContent = '専攻';
+    departmentGroup.style.display = 'block';
+  } else {
+    deptFields.style.display = 'none';
+  }
+}
+schoolRadios.forEach(radio => radio.addEventListener('change', updateSchoolFields));
+updateSchoolFields();
+
+const toggleBtn = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('password');
+toggleBtn.addEventListener('click', () => {
+  const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordInput.setAttribute('type', type);
+});
+
+const gradYearSelect = document.getElementById('grad-year');
+if (gradYearSelect) {
+  const currentYear = new Date().getFullYear();
+  for (let offset = 0; offset <= 3; offset += 1) {
+    const year = currentYear + offset;
+    const option = document.createElement('option');
+    option.value = String(year);
+    option.textContent = `${year}年`;
+    gradYearSelect.appendChild(option);
+  }
+}
+
+/* ===== 送信処理（Lambda + API Gateway にPOST） ===== */
+const submissionForm = document.getElementById('submissionForm');
+const submitBtn = document.getElementById('submitBtn');
+
+/** ★ここを Lambda のエンドポイントに差し替え（$defaultステージ想定） */
+const ENDPOINT = 'https://7nxdaf2lni.execute-api.ap-northeast-1.amazonaws.com/write';
+// もしステージが prod なら → 'https://7nxdaf2lni.execute-api.ap-northeast-1.amazonaws.com/prod/write'
+
+function getRadioValue(name) {
+  const checked = document.querySelector(`input[name="${name}"]:checked`);
+  return checked ? checked.value : '';
+}
+
+if (submissionForm) {
+  submissionForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // 送信ペイロード（Lambda 側でこの形式を受ける実装にしておいてください）
+    const payload = {
+      lastName: document.getElementById('last-name').value,
+      firstName: document.getElementById('first-name').value,
+      lastKana: document.getElementById('last-kana').value,
+      firstKana: document.getElementById('first-kana').value,
+      region: document.getElementById('region').value,
+      gender: getRadioValue('gender'),
+      school: getRadioValue('school'),
+      faculty: document.getElementById('faculty') ? document.getElementById('faculty').value : '',
+      department: document.getElementById('department') ? document.getElementById('department').value : '',
+      gradYear: document.getElementById('grad-year').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      password: document.getElementById('password').value
+      // ※ SECRET は不要になったため削除
+      // ※ API Key を使う場合は headers に 'x-api-key' を追加してください
+    };
+
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = '送信中…';
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        mode: 'cors', // CORS を使う（API Gateway 側で許可が必要）
+        headers: {
+          'Content-Type': 'application/json'
+          // 'x-api-key': 'YOUR_API_KEY' // APIキーで保護している場合のみ
+        },
+        body: JSON.stringify(payload)
+      });
+
+      // CORS未設定で no-cors にすると見かけ上成功でも中身を読めません。必ず API 側をCORS対応に。
+      if (!res.ok) {
+        const text = await res.text().catch(() => '');
+        throw new Error(`API ${res.status} ${res.statusText} ${text}`);
+      }
+
+      // レスポンス本文を使いたい場合はここで parse
+      // const data = await res.json().catch(() => ({}));
+
+      // 正常終了後の遷移
+      window.location.href = 'register_1.html';
+    } catch (error) {
+      console.error(error);
+      alert('送信に失敗しました。時間をおいて再度お試しください。');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+}
+</script>
+</body>
+</html>
