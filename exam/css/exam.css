@@ -32,6 +32,12 @@ a {
 .logo-container {
     display: flex;
     align-items: center;
+    text-decoration: none;
+}
+
+.logo-container:focus,
+.logo-container:hover {
+    text-decoration: none;
 }
 
 .logo {
@@ -198,9 +204,11 @@ a {
 }
 
 .timer-text {
-    fill: #333;
+    fill: #000;
     font-size: 0.9rem;
     transform: rotate(90deg);
+    transform-box: fill-box;
+    transform-origin: center;
 }
 
 .instruction {
