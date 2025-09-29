@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>アカウント | パウンタSPI</title>
+  <title>ホーム | パウンタSPI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -17,27 +17,25 @@
   </header>
   <main class="app-main">
     <section class="auth-panel">
-      <h1 class="auth-title">パウンタSPI アカウント</h1>
+      <h1 class="auth-title">マイページ</h1>
       <p class="auth-subtitle">
-        模擬試験の受験や学習レポートの確認には、アカウントへのサインインが必要です。
-        初めてご利用の方は新規登録からはじめましょう。
+        ログインが完了しました。模擬試験の受験や学習履歴の確認は、下記のメニューから操作できます。
       </p>
-      <div class="button-row">
-        <a class="button button--primary" href="signup.html">無料で新規登録</a>
-        <a class="button button--ghost" href="signin.html">ログインはこちら</a>
+      <div class="status-card">
+        <h2 class="status-card__title">現在ログイン中のアカウント</h2>
+        <p class="status-card__text">
+          メールアドレス：user@example.jp<br />
+          ステータス：メール認証済み・プレミアムプラン体験中
+        </p>
+      </div>
+      <div class="button-row" style="margin-top: 32px;">
+        <a class="button button--primary" href="../exam/result.html">模擬試験の結果を見る</a>
+        <a class="button button--primary" href="../exam/index.html">模擬試験を受ける</a>
+        <a class="button button--ghost" href="change_password.html">パスワードを変更する</a>
+        <a class="button button--ghost" href="change_email.html">メールアドレスを変更する</a>
       </div>
       <div class="form-note">
-        <p>
-          すでにメール認証を済ませている方は、<strong>サインイン</strong>後にマイページからご利用いただけます。
-        </p>
-      </div>
-      <div class="status-card" style="margin-top: 32px;">
-        <h2 class="status-card__title">アカウントでできること</h2>
-        <p class="status-card__text">
-          ・SPI 模試の受験とスコアの確認<br />
-          ・学習履歴の保存と振り返り<br />
-          ・メール通知によるリマインド設定
-        </p>
+        <p>セキュリティを確保するため、ご利用後は必ずログアウトしてください。</p>
       </div>
     </section>
   </main>
@@ -52,5 +50,7 @@
       <p class="copyright">© パウンタSPI</p>
     </div>
   </footer>
+
+  <script type="module" src="./js/pages/home.js"></script>
 </body>
 </html>
